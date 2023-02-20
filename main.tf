@@ -1,4 +1,4 @@
-# Create a resource group
+# Create a resource group for all our resources
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location

@@ -27,14 +27,13 @@ print("Tiempo en predicción:", end - start, "[s]")
 
 confusion_matrix(y_test, y_pred)
 
-
 print(classification_report(y_test, y_pred))
 
 report = classification_report(y_test, y_pred, output_dict=True)
 report.update({"accuracy": {"precision": None, "recall": None, "f1-score": report["accuracy"], "support": report['macro avg']['support']}})
 df = pd.DataFrame(report).transpose()
 
-#Generar pickle file
+#Generar pickle file con el modelo nuevo
 file = open ("modelnew.pkl","wb")
 pickle.dump(df, file)
 
