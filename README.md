@@ -8,6 +8,7 @@ Por otro lado, elegi el cloud provider Azure para levantar la aplicacion, ya que
 **A continuacion se detallan los pasos necesarios y requerimientos para correr el codigo en terraform y levantar la aplicacion:**
 
 **Requerimientos:**
+
 Se debe contar con los siguientes programas instalados en la PC que corra los comandos de terraform:
 
  - Docker 		---> https://docs.docker.com/engine/install/
@@ -43,6 +44,7 @@ Una vez descargados los archivos se deben modificar los valores asignados a las 
 En el proceso de la ejecucion de terraform, se va a generar la imagen de docker a partir del Dockerfile existente en el repsositorio que luego sera publicado en el container registry de Azure. Por lo que es normal que el proceso pueda demorar unos 10 minutos aproximadamente para terminar. Una vez que finaliza la ejecucion del comando de terraform, nos devuelve en un output la URL con la ip publica para acceder a nuestra api, tal como se ve en el siguiente ejemplo:
 
 ![enter image description here](https://i.ibb.co/X4ybwgQ/tfoutput.png)
+
 La URL nos dara acceso a la UI de FastAPI, donde podremos seleccionar la funcion GET /load_model y ejecutarla para que nos devuelva el JSON con los resultados de la prediccion:
 
 ![enter image description here](https://i.ibb.co/X8Nvqsq/fastapi.png)
