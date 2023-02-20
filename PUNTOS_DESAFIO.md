@@ -21,8 +21,9 @@ Debajo, usando la informacion que obtenemos en el portal de Azure, tambien podem
 
 **Punto 5** 
 
-Para limitar el acceso a los sistemas autorizados a nuestra aplicación API, se puede implementar mecanismos de autenticacion y autorizacion.
-Por ejemplo se puede utilizar un mecanismo de autenticacion para verificar la identidad de la aplicacion API. Esto podiía hacerse usando una clave secreta, una combinación de nombre de usuario y contraseña, o un mecanismo de autenticacion utilizando tokens como OAuth. De esta forma, aplicando uno de estos mecanismos logramos garantizar que solo las aplicaciones autorizadas puedan acceder al sistema.
+Para limitar el acceso a los sistemas autorizados a nuestra aplicacion API, se puede implementar mecanismos de autenticacion y autorizacion.
+Por ejemplo se puede utilizar un mecanismo de autenticacion para verificar la identidad de la aplicacion API. Esto podria hacerse usando una secret key, una combinación de usuario y contraseña, o un mecanismo de autenticacion utilizando tokens como OAuth. De esta forma, aplicando uno de estos mecanismos logramos garantizar que solo las aplicaciones autorizadas puedan acceder al sistema.
+
 **5.a.-** Estos mecanismos SI impactan en la latencia de la API al consumidor. Por ejemplo, si el mecanismo de autenticacion implica una consulta de base de datos, puede aumentar el tiempo necesario para procesar la solicitud y la respuesta de la API. Lo mismo si el mecanismo de autorizacion involucra alguna regla de control de acceso complejas, puede aumentar el tiempo de procesamiento.
 El impacto en la latencia puede ser minimizado implementando la tecnica de autenticacion con tokens OAuth.
 
