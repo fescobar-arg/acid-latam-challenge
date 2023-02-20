@@ -3,6 +3,7 @@
 Puntos 1, 2 y 4 comentados en README.md y dentro del repositorio de git se puede encontrar tanto los archivos que interactuan con la app de FastAPI, como los archivos terraform para levantar la aplicacion.
 
 **Punto 3**
+
 A continuacion los resultados obtenidos en la prueba de stress ejecutada con la tool 'wrk' con la aplicacion corriendo en 1 container con 2 cpu y 1GB de RAM:
 
 ![enter image description here](https://i.ibb.co/r5PDM9D/benchmark1.png)
@@ -19,12 +20,14 @@ Debajo, usando la informacion que obtenemos en el portal de Azure, tambien podem
 ![enter image description here](https://i.ibb.co/864mrQm/azuremetrics.png)
 
 **Punto 5** 
+
 Para limitar el acceso a los sistemas autorizados a nuestra aplicación API, se puede implementar mecanismos de autenticacion y autorizacion.
 Por ejemplo se puede utilizar un mecanismo de autenticacion para verificar la identidad de la aplicacion API. Esto podiía hacerse usando una clave secreta, una combinación de nombre de usuario y contraseña, o un mecanismo de autenticacion utilizando tokens como OAuth. De esta forma, aplicando uno de estos mecanismos logramos garantizar que solo las aplicaciones autorizadas puedan acceder al sistema.
 **5.a.-** Estos mecanismos SI impactan en la latencia de la API al consumidor. Por ejemplo, si el mecanismo de autenticacion implica una consulta de base de datos, puede aumentar el tiempo necesario para procesar la solicitud y la respuesta de la API. Lo mismo si el mecanismo de autorizacion involucra alguna regla de control de acceso complejas, puede aumentar el tiempo de procesamiento.
 El impacto en la latencia puede ser minimizado implementando la tecnica de autenticacion con tokens OAuth.
 
 **Punto 6**
+
 Si tomamos como referencia para nuestro ejemplo, que la aplicacion va a correr en el servicio de container instances de azure utilizando 1 container que contenga 4 CPU y 2GB de ram, podemos definir los siguientes SLIs y SLOs:
 
 **SLI:**
