@@ -6,9 +6,12 @@ Puntos 1, 2 y 4 comentados en README.md y dentro del repositorio de git se puede
 A continuacion los resultados obtenidos en la prueba de stress ejecutada con la tool 'wrk' con la aplicacion corriendo en 1 container con 2 cpu y 1GB de RAM:
 
 ![enter image description here](https://i.ibb.co/r5PDM9D/benchmark1.png)
+
 **3.a.-** Para mejorar la performance de la aplicacion, lo que puede hacerse en primer instancia es aumentar los recursos de CPU y RAM de la instancia o containers que se encuentran corriendo la aplicacion. Otra alternativa es crear un load balancer con un pool de instancias o containers que permitan autoescalado por consumo y de esa forma obtener un rendimiento consistente en nuestra aplicacion.
 Por ejemplo, duplicando los recursos del container que corre la aplicacion, se obtuvo el siguiente resultado:
+
 ![enter image description here](https://i.ibb.co/zrGd896/benchmark2.png)
+
 Como podemos ver en la segunda imagen, la latencia paso de 1.21s a 855ms en promedio. Esta disminucion en el tiempo de respuesta hace que incluso, durante el mismo tiempo de ejecucion de la prueba de stress, consigamos una mayor cantidad de requests durante los 45 segundos que dura la ejecucion. Como se evidencia, en el primer ejemplo pudimos realizar 29060 requests con una tasa de 644 req/sec; y en el segundo caso, el total de requests en 45 segundos fue de 41373, a una tasa de 917 req/sec. Es decir, un aumento del 42% en el rendimiento de las pruebas.
 
 Debajo, usando la informacion que obtenemos en el portal de Azure, tambien podemos apreciar que el consumo mayor de los recursos, fue en la CPU:
